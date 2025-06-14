@@ -2,19 +2,75 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Đăng Nhập</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+    }
+    .login-container {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f2f2f2;
+    }
+    .login-box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+      width: 300px;
+    }
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .login-box button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .image-side {
+      width: 50%;
+      background: #000;
+    }
+    .image-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
 </head>
 <body>
-  <div class="form-box">
-    <h2>Đăng Nhập</h2>
-    <form id="loginForm">
-      <input type="text" id="loginUser" placeholder="Tên đăng nhập" required>
-      <input type="password" id="loginPass" placeholder="Mật khẩu" required>
-      <button type="submit">Đăng Nhập</button>
-      <p>Chưa có tài khoản? <a href="register.html">Đăng ký</a></p>
-    </form>
+
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Đăng nhập</h2>
+      <input type="text" id="username" placeholder="Tên đăng nhập" />
+      <input type="password" id="password" placeholder="Mật khẩu" />
+      <button onclick="login()">Đăng nhập</button>
+    </div>
   </div>
+
+  <div class="image-side">
+    <img src="https://gamek.mediacdn.vn/133514250583805952/2024/11/26/screenshot33-1732586477237241773889.png" alt="Ảnh cô gái">
+  </div>
+
   <script src="auth.js"></script>
 </body>
 </html>

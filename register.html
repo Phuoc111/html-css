@@ -1,20 +1,75 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Đăng Ký</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Đăng ký</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+    }
+    .register-container {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f9f9f9;
+    }
+    .register-box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+      width: 300px;
+    }
+    .register-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .register-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .register-box button {
+      width: 100%;
+      padding: 10px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .image-side {
+      width: 50%;
+    }
+    .image-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
 </head>
 <body>
-  <div class="form-box">
-    <h2>Đăng Ký</h2>
-    <form id="registerForm">
-      <input type="text" id="regUser" placeholder="Tên đăng nhập" required>
-      <input type="password" id="regPass" placeholder="Mật khẩu" required>
-      <button type="submit">Đăng Ký</button>
-      <p>Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
-    </form>
+
+  <div class="register-container">
+    <div class="register-box">
+      <h2>Đăng ký</h2>
+      <input type="text" id="reg-username" placeholder="Tên đăng nhập" />
+      <input type="password" id="reg-password" placeholder="Mật khẩu" />
+      <button onclick="register()">Đăng ký</button>
+    </div>
   </div>
+
+  <div class="image-side">
+    <img src="https://gamek.mediacdn.vn/thumb_w/640/133514250583805952/2024/11/26/screenshot34-17325867833381020396080.png" alt="Ảnh cô gái đăng ký">
+  </div>
+
   <script src="auth.js"></script>
 </body>
 </html>

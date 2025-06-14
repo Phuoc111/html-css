@@ -1,34 +1,104 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Tài Xỉu</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Tài Xỉu</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/474088qnJ/anh-che-tokuda-jav_101658721.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-shadow: 1px 1px 2px black;
+    }
+
+    .content {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      margin: 50px auto;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .dice-container img {
+      margin: 10px;
+    }
+
+    .controls button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      background-color: #ffc107;
+      color: #000;
+      transition: background 0.3s;
+    }
+
+    .controls button:hover {
+      background-color: #ff9800;
+    }
+
+    .social-links {
+      margin-top: 20px;
+    }
+
+    .social-links img {
+      margin: 0 10px;
+      width: 32px;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    .social-links img:hover {
+      transform: scale(1.2);
+    }
+  </style>
 </head>
 <body>
-  <div class="game-box">
-    <h1>🎲 Game Tài Xỉu</h1>
-    <p id="welcomeMsg"></p>
+  <div class="content">
+    <h1>🎲 Game Tài Xỉu 🎲</h1>
 
     <div class="dice-container">
-        <img id="dice1" src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Dice-1-b.svg" width="100" height="100">
-        <img id="dice2" src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Dice-1-b.svg" width="100" height="100">
-        
+      <img id="dice1" src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Dice-1-b.svg" alt="Dice 1" width="100" />
+      <img id="dice2" src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Dice-2-b.svg" alt="Dice 2" width="100" />
     </div>
 
-    <button onclick="rollDice()">Lắc Xúc Xắc</button>
-    <h2 id="result">Nhấn nút để bắt đầu!</h2>
-    <a href="login.html">Đăng xuất</a>
+    <div class="controls">
+      <button onclick="play('tài')">Tài</button>
+      <button onclick="play('xỉu')">Xỉu</button>
+    </div>
+
+    <p id="result">Kết quả sẽ hiển thị ở đây</p>
+    <p>Lượt chơi: <span id="total">0</span></p>
+    <p>Thắng: <span id="win">0</span></p>
+
+    <audio id="sound" src="https://www.soundjay.com/button/sounds/button-3.mp3" preload="auto"></audio>
+<audio id="dramaticSound" src="https://www.fesliyanstudios.com/play-mp3/387" preload="auto"></audio>
+
+    <div class="social-links">
+      <p>Kết nối với tôi:</p>
+      <a href="https://www.facebook.com/dqminhhoang" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
+      </a>
+      <a href="https://www.tiktok.com/@pho_go?lang=vi-VN" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png" alt="TikTok" />
+      </a>
+      <a href="https://www.instagram.com/yourusername" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+      </a>
+    </div>
   </div>
 
   <script src="script.js"></script>
-  <script>
-    const user = localStorage.getItem("user");
-    if (!user) {
-      location.href = "login.html";
-    } else {
-      document.getElementById("welcomeMsg").innerText = `Chào, ${user}!`;
-    }
-  </script>
 </body>
 </html>
