@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tài Xỉu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-box">
+    <h1>🎲 Game Tài Xỉu</h1>
+    <p id="welcomeMsg"></p>
+
+    <div class="dice-container">
+        <img id="dice1" src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Dice-1-b.svg" width="100" height="100">
+        <img id="dice2" src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Dice-1-b.svg" width="100" height="100">
+        
+    </div>
+
+    <button onclick="rollDice()">Lắc Xúc Xắc</button>
+    <h2 id="result">Nhấn nút để bắt đầu!</h2>
+    <a href="login.html">Đăng xuất</a>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const user = localStorage.getItem("user");
+    if (!user) {
+      location.href = "login.html";
+    } else {
+      document.getElementById("welcomeMsg").innerText = `Chào, ${user}!`;
+    }
+  </script>
+</body>
+</html>
